@@ -1,0 +1,65 @@
+.header {
+  background-color: #333;
+  padding: 1rem 0;
+  color: white;
+  position: relative;
+}
+
+.logo a {
+  text-decoration: none;
+  color: white;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Pulsante hamburger (mobile) */
+.mobile-menu-icon {
+  display: none; /* Nascondi di default */
+  background: none;
+  color: white;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Visualizza solo su desktop */
+.desktop-nav {
+  display: flex;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin: 0 1rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* Stili specifici per dispositivi mobili */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none; /* Nascondi il menu desktop */
+  }
+
+  .mobile-menu-icon {
+    display: block; /* Mostra il pulsante hamburger */
+  }
+}

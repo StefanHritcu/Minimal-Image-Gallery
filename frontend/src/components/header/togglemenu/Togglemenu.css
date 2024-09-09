@@ -1,0 +1,50 @@
+.toggle-menu {
+  position: fixed;
+  top: 0;
+  right: -100%; /* Nascondi il menu a destra fuori dalla vista */
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  color: white;
+  transition: right 0.3s ease; /* Effetto di scorrimento da destra */
+  z-index: 1000;
+  padding-top: 60px;
+}
+
+.toggle-menu.open {
+  right: 0; /* Sposta il menu in vista da destra */
+}
+
+.menu-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.menu-links li {
+  margin: 1rem 0;
+}
+
+.menu-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  display: block;
+  padding: 0.5rem 1rem;
+}
+
+.menu-links a:hover {
+  background-color: #444;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px; /* Cambiamo la posizione del pulsante close a sinistra */
+  background: none;
+  color: white;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
