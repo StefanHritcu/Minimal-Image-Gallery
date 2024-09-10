@@ -40,11 +40,17 @@
 
 .close-btn {
   position: absolute;
-  top: 20px;
-  left: 20px; /* Cambiamo la posizione del pulsante close a sinistra */
+  top: 52px;
+  right: 20px;
   background: none;
   color: white;
   border: none;
   font-size: 2rem;
   cursor: pointer;
+}
+
+@media(min-width: 600px) {
+  .close-btn {
+    top: 32px;
+  }
 }
