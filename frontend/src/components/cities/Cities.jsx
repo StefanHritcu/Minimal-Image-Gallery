@@ -16,14 +16,19 @@ const Cities = () => {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    // Preload images
     const preloadImages = () => {
+      //PROMISE ALL prende tutte le promesse (foto da caricare in questo caso)
+      //e aspetta che vengano risolte
+      //PROMISE.ALL VIENE USATO PER CARICARE RISORSE COME LE IMMAGINI
+
       return Promise.all(
         citiesImages.map((image) => {
           return new Promise((resolve, reject) => {
             const img = new Image();
             img.src = image.src;
+            //ONLOAD immagine caricata con successo
             img.onload = resolve;
+            //ONERROR immagine rifiutata
             img.onerror = reject;
           });
         })

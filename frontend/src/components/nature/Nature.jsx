@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Gallery from "../gallery/Gallery";
 import Nature1 from "./natureImages/nature1.jpg";
 import Nature2 from "./natureImages/nature2.jpg";
@@ -24,6 +25,35 @@ const natureImages = [
 ];
 
 const Nature = () => {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    const preloadImages = () => {
+      return Promise.all(
+        natureImages.map((image) => {
+          return new Promise((resolve, reject) => {
+            const img = new Image();
+            img.src = image.src;
+            img.onload = resolve;
+            img.onerror = reject;
+          });
+        })
+      );
+    };
+
+    preloadImages()
+      .then(() => {
+        setLoaded(true);
+      })
+      .catch((error) => {
+        console.error("Error preloading images", error);
+      });
+  }, []);
+
+  if (!loaded) {
+    return <div>Loading Nature...</div>;
+  }
+
   return <Gallery title="Nature" images={natureImages} />;
 };
 

@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Gallery from "../gallery/Gallery";
 import Tech1 from "./technologyImages/tech1.jpg";
 import Tech2 from "./technologyImages/tech2.jpg";
@@ -24,6 +25,35 @@ const technologyImages = [
 ];
 
 const Technology = () => {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    const preloadImages = () => {
+      return Promise.all(
+        technologyImages.map((image) => {
+          return new Promise((resolve, reject) => {
+            const img = new Image();
+            img.src = image.src;
+            img.onload = resolve;
+            img.onerror = reject;
+          });
+        })
+      );
+    };
+
+    preloadImages()
+      .then(() => {
+        setLoaded(true);
+      })
+      .catch((error) => {
+        console.error("Error preloading images", error);
+      });
+  }, []);
+
+  if (!loaded) {
+    return <div>Loading Technology...</div>;
+  }
+
   return <Gallery title="Technology" images={technologyImages} />;
 };
 
