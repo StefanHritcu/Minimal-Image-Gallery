@@ -1,4 +1,4 @@
-# 🌟 Minimal-Image-Gallery 🌟
+# 🌟 Reac-tPerformance-Optimizer-App 🌟
 
 ## Overview
 
