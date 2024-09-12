@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./ToggleMenu.css";
+import "./Togglemenu.css"
 
 const ToggleMenu = ({ isOpen, toggleMenu }) => {
   return (
