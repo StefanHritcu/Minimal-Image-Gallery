@@ -1,4 +1,4 @@
-# 🌟 Reac-tPerformance-Optimizer-App 🌟
+# 🌟 React-Performance-Optimizer-App 🌟
 
 ## Overview
 
